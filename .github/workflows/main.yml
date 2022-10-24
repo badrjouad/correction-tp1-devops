@@ -24,8 +24,7 @@ jobs:
       #finally build your app with the latest command
       - name: Build and test with Maven
         #run: mvn clean verify --file ./simple-api/pom.xml
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=diopKhadim_correction-tp1-devops -Dsonar.organization=diopkhadim -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
-
+        run: mvn clean verify --file ./simple-api/pom.xml
 
   build-and-push-docker-image:
 
@@ -68,3 +67,9 @@ jobs:
           tags:  ${{secrets.DOCKER_USERNAME}}/tp-devops-epf:httpd
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/master' }}
+
+
+
+
+
+
