@@ -1,0 +1,7 @@
+- name: Run app
+  docker_container:
+    name: backend
+    image: badrjouad/tp-devops-epf:simple-api
+    state: started
+    networks:
+      - name: app-network
